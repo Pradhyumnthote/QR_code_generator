@@ -22,3 +22,28 @@
     </form>
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decrypt QR Code</title>
+</head>
+<body>
+    <h1>Enter OTP to Decrypt Student Details</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="otp">Enter OTP:</label>
+        <input type="text" id="otp" name="otp" required><br><br>
+    
+        <button type="submit">Decrypt</button>
+    </form>
+    
+    {% if decrypted_data %}
+        <h2>Decrypted Student Details:</h2>
+        <p>{{ decrypted_data }}</p>
+    {% elif error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
