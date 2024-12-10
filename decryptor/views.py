@@ -9,7 +9,7 @@ from django.utils.http import urlencode
 import os
 
 def home(request):
-    return render(request, 'home.html') 
+    return render(request, '') 
 
 # Derive a 32-byte Fernet key from a 6-character OTP
 def derive_fernet_key(otp):
